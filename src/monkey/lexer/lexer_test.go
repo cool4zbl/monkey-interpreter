@@ -6,6 +6,7 @@ import (
 	"monkey/token"
 )
 
+// TODO: how about floats  / hex notation / octal notation?
 func TestLexer_NextToken(t *testing.T) {
 	input := `let five = 5;
 let ten = 10;
