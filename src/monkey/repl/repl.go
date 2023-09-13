@@ -9,8 +9,9 @@ import (
 )
 
 /*
-A REPL tokenizes source code and prints the tokens
+A REPL that tokenizes source code and prints the tokens
 */
+
 const PROMPT = ">> "
 
 func Start(in io.Reader, out io.Writer) {
@@ -31,5 +32,4 @@ func Start(in io.Reader, out io.Writer) {
 			fmt.Printf("%+v\n", tok)
 		}
 	}
-
 }
