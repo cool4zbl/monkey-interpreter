@@ -15,10 +15,11 @@ func New(input string) *Lexer {
 
 	return l
 }
+
+// Two pointers, set `pos` & `readPos`
 func (l *Lexer) readChar() {
 	if l.readPosition >= len(l.input) {
-		// set ending flat `0` of the input
-		l.ch = 0
+		l.ch = 0 // set the ending flag `0` of the input
 	} else {
 		l.ch = l.input[l.readPosition]
 	}
@@ -33,6 +34,7 @@ func (l *Lexer) NextToken() token.Token {
 
 	switch l.ch {
 	case '=':
+		// TODO: `makeTwoCharToken` peeks and advances if it found the right token.
 		if l.peekChar() == '=' {
 			ch := l.ch
 			l.readChar()
@@ -52,6 +54,7 @@ func (l *Lexer) NextToken() token.Token {
 	case '/':
 		tok = newToken(token.SLASH, l.ch)
 	case '!':
+		// TODO: `makeTwoCharToken` peeks and advances if it found the right token.
 		if l.peekChar() == '=' {
 			ch := l.ch
 			l.readChar()
